@@ -19,7 +19,10 @@ public class AlertService {
     @Transactional(readOnly = true)
     public void alertTeam(Long teamId) {
         Team team = teamRepository.findById(teamId).orElseThrow(AckoEntityNotFoundException::new);
-        Developer devToNotify = team.getDevelopers().stream().findAny().orElseThrow(AckoNoDeveloperPresentException::new);
+        Developer devToNotify = team.getDevelopers()
+                .stream()
+                .findAny()
+                .orElseThrow(AckoNoDeveloperPresentException::new);
         smsNotificationService.notifyBySMS(devToNotify.getPhoneNo(), "Alert has been raised for your team!");
     }
 }

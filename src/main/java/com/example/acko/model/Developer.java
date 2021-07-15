@@ -18,7 +18,7 @@ public class Developer {
     @Getter @Setter
     private String name;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     @Getter @Setter
     private String phoneNo;
 

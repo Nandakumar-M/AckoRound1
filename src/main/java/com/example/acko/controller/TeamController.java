@@ -21,6 +21,7 @@ public class TeamController {
 
     @PostMapping
     public TeamDTO addTeam(@Valid @RequestBody AddTeamDTO team) {
+
         return teamService.addTeam(team);
     }
 }

@@ -18,6 +18,7 @@ public class AlertController {
     private final AlertService alertService;
     @PostMapping
     public void raiseAlert(@Valid @RequestBody AlertDTO dto) {
+
         alertService.alertTeam(dto.getTeamId());
     }
 }
