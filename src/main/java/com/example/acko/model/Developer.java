@@ -23,7 +23,6 @@ public class Developer {
     private String phoneNo;
 
     @ManyToOne(optional = false)
-    @Column(nullable = false)
     @Getter @Setter
     private Team team;
 
